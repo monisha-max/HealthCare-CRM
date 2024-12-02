@@ -12,10 +12,15 @@ Clone the repository to your local machine using the following command:
 git clone https://github.com/monisha-max/HealthCare-CRM.git
 
 ### Step 2: Navigate to the Project Directory
+```bash
 cd HealthCare-CRM
 
 ### Step 3: Compile the Java Files
+```bash
 javac *.java
 
 ### Step 4: Run the Application
+```bash
 java CRMApp
+
+
