@@ -93,260 +93,126 @@ public class CRMApp {
         row5.add(addressField);
         inputPanel.add(row5);
 
-        // Buttons
-            JPanel buttonPanel = new JPanel();
-            buttonPanel.setLayout(new GridLayout(4, 6, 10, 10));
-            buttonPanel.setBackground(Color.BLACK);  // 4 rows and 6 columns, with 10px horizontal and vertical gaps
+        // Dropdown Menu
+        String[] actions = {
+            "Add Patient", "List Patients", "Add Doctor", "List Doctors",
+            "Add Appointment", "List Appointments", "View Medical Record",
+            "Add Diagnosis", "Add Prescription", "List Prescriptions",
+            "Add Billing", "View Billing", "Add Insurance Claim",
+            "View Insurance Claims", "Add Feedback", "View Feedback",
+            "Add Referral", "View Referrals", "Add Staff Member",
+            "List Staff Members", "Add Treatment Plan", "View Treatment Plans",
+            "Send Notification", "View Notifications", "Send Appointment Reminder",
+            "Add Immunization", "View Immunizations", "Add Care Plan",
+            "List Care Plans", "Purchase Care Plan", "Add Health Risk Assessment",
+            "View Health Risk Assessments"
+        };
 
-            // Row 1 buttons
-            JButton addPatientButton = new JButton("Add Patient");
-            addPatientButton.setOpaque(true);
-            addPatientButton.setBorderPainted(false);
-            addPatientButton.setBackground(new Color(60, 120, 255));
-            addPatientButton.setForeground(Color.BLACK);
-            buttonPanel.add(addPatientButton);
-            addPatientButton.addActionListener(e -> addPatient());
-
-            JButton listPatientsButton = new JButton("List Patients");
-            listPatientsButton.setOpaque(true);
-            listPatientsButton.setBorderPainted(false);
-            listPatientsButton.setBackground(new Color(60, 120, 255));
-            listPatientsButton.setForeground(Color.BLACK);
-            buttonPanel.add(listPatientsButton);
-            listPatientsButton.addActionListener(e -> listPatients());
-
-            JButton addDoctorButton = new JButton("Add Doctor");
-            addDoctorButton.setOpaque(true);
-            addDoctorButton.setBorderPainted(false);
-            addDoctorButton.setBackground(new Color(60, 120, 255));
-            addDoctorButton.setForeground(Color.BLACK);
-            buttonPanel.add(addDoctorButton);
-            addDoctorButton.addActionListener(e -> addDoctor());
-
-            JButton listDoctorsButton = new JButton("List Doctors");
-            listDoctorsButton.setOpaque(true);
-            listDoctorsButton.setBorderPainted(false);
-            listDoctorsButton.setBackground(new Color(60, 120, 255));
-            listDoctorsButton.setForeground(Color.BLACK);
-            buttonPanel.add(listDoctorsButton);
-            listDoctorsButton.addActionListener(e -> listDoctors());
-
-            JButton addAppointmentButton = new JButton("Add Appointment");
-            addAppointmentButton.setOpaque(true);
-            addAppointmentButton.setBorderPainted(false);
-            addAppointmentButton.setBackground(new Color(60, 120, 255));
-            addAppointmentButton.setForeground(Color.BLACK);
-            buttonPanel.add(addAppointmentButton);
-            addAppointmentButton.addActionListener(e -> addAppointment());
-
-            JButton listAppointmentsButton = new JButton("List Appointments");
-            listAppointmentsButton.setOpaque(true);
-            listAppointmentsButton.setBorderPainted(false);
-            listAppointmentsButton.setBackground(new Color(60, 120, 255));
-            listAppointmentsButton.setForeground(Color.BLACK);
-            buttonPanel.add(listAppointmentsButton);
-            listAppointmentsButton.addActionListener(e -> listAppointments());
-
-            // Row 2 buttons
-            JButton viewMedicalRecordButton = new JButton("View Medical Record");
-            viewMedicalRecordButton.setOpaque(true);
-            viewMedicalRecordButton.setBorderPainted(false);
-            viewMedicalRecordButton.setBackground(new Color(60, 120, 255));
-            viewMedicalRecordButton.setForeground(Color.BLACK);
-            buttonPanel.add(viewMedicalRecordButton);
-            viewMedicalRecordButton.addActionListener(e -> viewMedicalRecord());
-
-            JButton addDiagnosisButton = new JButton("Add Diagnosis");
-            addDiagnosisButton.setOpaque(true);
-            addDiagnosisButton.setBorderPainted(false);
-            addDiagnosisButton.setBackground(new Color(60, 120, 255));
-            addDiagnosisButton.setForeground(Color.BLACK);
-            buttonPanel.add(addDiagnosisButton);
-            addDiagnosisButton.addActionListener(e -> addDiagnosis());
-
-            JButton addPrescriptionButton = new JButton("Add Prescription");
-            addPrescriptionButton.setOpaque(true);
-            addPrescriptionButton.setBorderPainted(false);
-            addPrescriptionButton.setBackground(new Color(60, 120, 255));
-            addPrescriptionButton.setForeground(Color.BLACK);
-            buttonPanel.add(addPrescriptionButton);
-            addPrescriptionButton.addActionListener(e -> addPrescription());
-
-            JButton listPrescriptionsButton = new JButton("List Prescriptions");
-            listPrescriptionsButton.setOpaque(true);
-            listPrescriptionsButton.setBorderPainted(false);
-            listPrescriptionsButton.setBackground(new Color(60, 120, 255));
-            listPrescriptionsButton.setForeground(Color.BLACK);
-            buttonPanel.add(listPrescriptionsButton);
-            listPrescriptionsButton.addActionListener(e -> listPrescriptions());
-
-            JButton addBillingButton = new JButton("Add Billing");
-            addBillingButton.setOpaque(true);
-            addBillingButton.setBorderPainted(false);
-            addBillingButton.setBackground(new Color(60, 120, 255));
-            addBillingButton.setForeground(Color.BLACK);
-            buttonPanel.add(addBillingButton);
-            addBillingButton.addActionListener(e -> addBilling());
-
-            JButton viewBillingButton = new JButton("View Billing");
-            viewBillingButton.setOpaque(true);
-            viewBillingButton.setBorderPainted(false);
-            viewBillingButton.setBackground(new Color(60, 120, 255));
-            viewBillingButton.setForeground(Color.BLACK);
-            buttonPanel.add(viewBillingButton);
-            viewBillingButton.addActionListener(e -> viewBilling());
-
-            // Row 3 buttons
-            JButton addClaimButton = new JButton("Add Insurance Claim");
-            addClaimButton.setOpaque(true);
-            addClaimButton.setBorderPainted(false);
-            addClaimButton.setBackground(new Color(60, 120, 255));
-            addClaimButton.setForeground(Color.BLACK);
-            buttonPanel.add(addClaimButton);
-            addClaimButton.addActionListener(e -> addInsuranceClaim());
-
-            JButton viewClaimsButton = new JButton("View Insurance Claims");
-            viewClaimsButton.setOpaque(true);
-            viewClaimsButton.setBorderPainted(false);
-            viewClaimsButton.setBackground(new Color(60, 120, 255));
-            viewClaimsButton.setForeground(Color.BLACK);
-            buttonPanel.add(viewClaimsButton);
-            viewClaimsButton.addActionListener(e -> viewInsuranceClaims());
-
-            JButton addFeedbackButton = new JButton("Add Feedback");
-            addFeedbackButton.setOpaque(true);
-            addFeedbackButton.setBorderPainted(false);
-            addFeedbackButton.setBackground(new Color(60, 120, 255));
-            addFeedbackButton.setForeground(Color.BLACK);
-            buttonPanel.add(addFeedbackButton);
-            addFeedbackButton.addActionListener(e -> addFeedback());
-
-            JButton viewFeedbackButton = new JButton("View Feedback");
-            viewFeedbackButton.setOpaque(true);
-            viewFeedbackButton.setBorderPainted(false);
-            viewFeedbackButton.setBackground(new Color(60, 120, 255));
-            viewFeedbackButton.setForeground(Color.BLACK);
-            buttonPanel.add(viewFeedbackButton);
-            viewFeedbackButton.addActionListener(e -> viewFeedback());
-
-            JButton addReferralButton = new JButton("Add Referral");
-            addReferralButton.setOpaque(true);
-            addReferralButton.setBorderPainted(false);
-            addReferralButton.setBackground(new Color(60, 120, 255));
-            addReferralButton.setForeground(Color.BLACK);
-            buttonPanel.add(addReferralButton);
-            addReferralButton.addActionListener(e -> addReferral());
-
-            JButton viewReferralsButton = new JButton("View Referrals");
-            viewReferralsButton.setOpaque(true);
-            viewReferralsButton.setBorderPainted(false);
-            viewReferralsButton.setBackground(new Color(60, 120, 255));
-            viewReferralsButton.setForeground(Color.BLACK);
-            buttonPanel.add(viewReferralsButton);
-            viewReferralsButton.addActionListener(e -> viewReferrals());
-
-            // Row 4 buttons (with dummy buttons added)
-            JButton addStaffButton = new JButton("Add Staff Member");
-            addStaffButton.setOpaque(true);
-            addStaffButton.setBorderPainted(false);
-            addStaffButton.setBackground(new Color(60, 120, 255));
-            addStaffButton.setForeground(Color.BLACK);
-            buttonPanel.add(addStaffButton);
-            addStaffButton.addActionListener(e -> addStaffMember());
-
-            JButton listStaffButton = new JButton("List Staff Members");
-            listStaffButton.setOpaque(true);
-            listStaffButton.setBorderPainted(false);
-            listStaffButton.setBackground(new Color(60, 120, 255));
-            listStaffButton.setForeground(Color.BLACK);
-            buttonPanel.add(listStaffButton);
-            listStaffButton.addActionListener(e -> listStaffMembers());
-
-            JButton addTreatmentPlanButton = new JButton("Add Treatment Plan");
-            addTreatmentPlanButton.setOpaque(true);
-            addTreatmentPlanButton.setBorderPainted(false);
-            addTreatmentPlanButton.setBackground(new Color(60, 120, 255));
-            addTreatmentPlanButton.setForeground(Color.BLACK);
-            buttonPanel.add(addTreatmentPlanButton);
-            addTreatmentPlanButton.addActionListener(e -> addTreatmentPlan());
-
-            JButton viewTreatmentPlansButton = new JButton("View Treatment Plans");
-            viewTreatmentPlansButton.setOpaque(true);
-            viewTreatmentPlansButton.setBorderPainted(false);
-            viewTreatmentPlansButton.setBackground(new Color(60, 120, 255));
-            viewTreatmentPlansButton.setForeground(Color.BLACK);
-            buttonPanel.add(viewTreatmentPlansButton);
-            viewTreatmentPlansButton.addActionListener(e -> viewTreatmentPlans());
-
-            JButton sendNotificationButton = new JButton("Send Notification");
-            sendNotificationButton.setOpaque(true);
-            sendNotificationButton.setBorderPainted(false);
-            sendNotificationButton.setBackground(new Color(60, 120, 255));
-            sendNotificationButton.setForeground(Color.BLACK);
-            buttonPanel.add(sendNotificationButton);
-            sendNotificationButton.addActionListener(e -> sendNotification());
-
-            JButton viewNotificationsButton = new JButton("View Notification");
-            viewNotificationsButton.setOpaque(true);
-            viewNotificationsButton.setBorderPainted(false);
-            viewNotificationsButton.setBackground(new Color(60, 120, 255));
-            viewNotificationsButton.setForeground(Color.BLACK);
-            buttonPanel.add(viewNotificationsButton);
-            viewNotificationsButton.addActionListener(e -> viewNotifications());
-
-
-            JButton sendAppointmentReminderButton = new JButton("Send Appointment Reminder");
-            sendAppointmentReminderButton.setOpaque(true);
-            sendAppointmentReminderButton.setBorderPainted(false);
-            sendAppointmentReminderButton.setBackground(new Color(60, 120, 255));
-            sendAppointmentReminderButton.setForeground(Color.BLACK);
-            buttonPanel.add(sendAppointmentReminderButton);
-            sendAppointmentReminderButton.addActionListener(e -> sendAppointmentReminder());
-
-            JButton addCarePlanButton = new JButton("Add Care Plan");
-            addCarePlanButton.setOpaque(true);
-            addCarePlanButton.setBorderPainted(false);
-            addCarePlanButton.setBackground(new Color(60, 120, 255));
-            addCarePlanButton.setForeground(Color.BLACK);
-            buttonPanel.add(addCarePlanButton);
-            addCarePlanButton.addActionListener(e -> addCarePlan());
-
-            JButton listCarePlansButton = new JButton("List Care Plans");
-            listCarePlansButton.setOpaque(true);
-            listCarePlansButton.setBorderPainted(false);
-            listCarePlansButton.setBackground(new Color(60, 120, 255));
-            listCarePlansButton.setForeground(Color.BLACK);
-            buttonPanel.add(listCarePlansButton);
-            listCarePlansButton.addActionListener(e -> listCarePlans());
-
-            JButton purchaseCarePlanButton = new JButton("Purchase Care Plan");
-            purchaseCarePlanButton.setOpaque(true);
-            purchaseCarePlanButton.setBorderPainted(false);
-            purchaseCarePlanButton.setBackground(new Color(60, 120, 255));
-            purchaseCarePlanButton.setForeground(Color.BLACK);
-            buttonPanel.add(purchaseCarePlanButton);
-            purchaseCarePlanButton.addActionListener(e -> purchaseCarePlan());
-
-            JButton addAssessmentButton = new JButton("Add Health Risk Assessment");
-            addAssessmentButton.setOpaque(true);
-            addAssessmentButton.setBorderPainted(false);
-            addAssessmentButton.setBackground(new Color(60, 120, 255));
-            addAssessmentButton.setForeground(Color.BLACK);
-            buttonPanel.add(addAssessmentButton);
-            addAssessmentButton.addActionListener(e -> addHealthRiskAssessment());
-
-            JButton viewAssessmentsButton = new JButton("View Health Risk Assessments");
-            viewAssessmentsButton.setOpaque(true);
-            viewAssessmentsButton.setBorderPainted(false);
-            viewAssessmentsButton.setBackground(new Color(60, 120, 255));
-            viewAssessmentsButton.setForeground(Color.BLACK);
-            buttonPanel.add(viewAssessmentsButton);
-            viewAssessmentsButton.addActionListener(e -> viewHealthRiskAssessments());
-
-
-            buttonPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, buttonPanel.getPreferredSize().height));
-            buttonPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
-            inputPanel.add(buttonPanel);
+        JComboBox<String> actionDropdown = new JComboBox<>(actions);
+        actionDropdown.addActionListener(e -> {
+            String selectedAction = (String) actionDropdown.getSelectedItem();
+            switch (selectedAction) {
+                case "Add Patient":
+                    addPatient();
+                    break;
+                case "List Patients":
+                    listPatients();
+                    break;
+                case "Add Doctor":
+                    addDoctor();
+                    break;
+                case "List Doctors":
+                    listDoctors();
+                    break;
+                case "Add Appointment":
+                    addAppointment();
+                    break;
+                case "List Appointments":
+                    listAppointments();
+                    break;
+                case "View Medical Record":
+                    viewMedicalRecord();
+                    break;
+                case "Add Diagnosis":
+                    addDiagnosis();
+                    break;
+                case "Add Prescription":
+                    addPrescription();
+                    break;
+                case "List Prescriptions":
+                    listPrescriptions();
+                    break;
+                case "Add Billing":
+                    addBilling();
+                    break;
+                case "View Billing":
+                    viewBilling();
+                    break;
+                case "Add Insurance Claim":
+                    addInsuranceClaim();
+                    break;
+                case "View Insurance Claims":
+                    viewInsuranceClaims();
+                    break;
+                case "Add Feedback":
+                    addFeedback();
+                    break;
+                case "View Feedback":
+                    viewFeedback();
+                    break;
+                case "Add Referral":
+                    addReferral();
+                    break;
+                case "View Referrals":
+                    viewReferrals();
+                    break;
+                case "Add Staff Member":
+                    addStaffMember();
+                    break;
+                case "List Staff Members":
+                    listStaffMembers();
+                    break;
+                case "Add Treatment Plan":
+                    addTreatmentPlan();
+                    break;
+                case "View Treatment Plans":
+                    viewTreatmentPlans();
+                    break;
+                case "Send Notification":
+                    sendNotification();
+                    break;
+                case "View Notifications":
+                    viewNotifications();
+                    break;
+                case "Send Appointment Reminder":
+                    sendAppointmentReminder();
+                    break;
+                case "Add Immunization":
+                    addImmunization();
+                    break;
+                case "View Immunizations":
+                    viewImmunizations();
+                    break;
+                case "Add Care Plan":
+                    addCarePlan();
+                    break;
+                case "List Care Plans":
+                    listCarePlans();
+                    break;
+                case "Purchase Care Plan":
+                    purchaseCarePlan();
+                    break;
+                case "Add Health Risk Assessment":
+                    addHealthRiskAssessment();
+                    break;
+                case "View Health Risk Assessments":
+                    viewHealthRiskAssessments();
+                    break;
+                default:
+                    break;
+            }
+        });
+        inputPanel.add(actionDropdown);
 
         displayArea = new JTextArea();
         displayArea.setEditable(false);
@@ -1088,18 +954,7 @@ private void viewHealthRiskAssessments() {
     }
 }
 
-
-
-    
-    
-    
-    
-    
-    
-    
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(CRMApp::new);
     }
 }
-
