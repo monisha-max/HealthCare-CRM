@@ -31,4 +31,9 @@ javac *.java
 java CRMApp
 ```
 ![image](https://github.com/user-attachments/assets/44ece2d6-6f10-42b4-b38e-2cb7ab8eb9e6)
+![image](https://github.com/user-attachments/assets/ef5b2e16-f31e-4bad-bad8-ebb1e690183c)
+![image](https://github.com/user-attachments/assets/0582bbbe-cfb9-44ac-93a4-4604885443ff)
+![image](https://github.com/user-attachments/assets/b8448d67-09ce-4e88-8e2b-90a5cb9acb9f)
+
+
 
