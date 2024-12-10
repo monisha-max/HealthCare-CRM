@@ -107,7 +107,7 @@ public class CRMApp {
             "List Care Plans", "Purchase Care Plan", "Add Health Risk Assessment",
             "View Health Risk Assessments"
         };
-
+//action dropdown
         JComboBox<String> actionDropdown = new JComboBox<>(actions);
         actionDropdown.addActionListener(e -> {
             String selectedAction = (String) actionDropdown.getSelectedItem();
